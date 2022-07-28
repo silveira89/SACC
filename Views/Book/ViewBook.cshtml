@@ -1,0 +1,7 @@
+﻿@model Book 
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<p>@Html.ActionLink("GetPdf", Model.BookFile)</p>

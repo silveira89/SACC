@@ -1,0 +1,52 @@
+﻿@using SACC.ViewModels
+@model RegisterViewModel
+
+<body>
+    <div id="register">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form asp-controller="Account" asp-action="Register" method="post" class="form-horizontal" role="form" id="login-form">
+                            <h3 class="text-center text-info">Registrar usuário</h3>
+                            <div asp-validation-summary="None" class="text-danger"></div>
+                            <input type="hidden" asp-for="ReturnUrl" />
+                            <div class="form-group">
+                                <label asp-for="UserName" class="text-info">Usuário (sem espaços):</label><br>
+                                <input asp-for="UserName" class="form-control">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Name" class="text-info">Nome completo:</label><br>
+                                <input asp-for="Name" class="form-control">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="text-info">E-mail:</label><br>
+                                <input asp-for="Email" class="form-control">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Birthday" class="text-info">Data de nascimento:</label><br>
+                                <input asp-for="Birthday" class="form-control">
+                                <span asp-validation-for="Birthday" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="text-info">Senha:</label><br>
+                                <input asp-for="Password" class="form-control">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <div class="form-group" style="padding-bottom:40px">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrar">
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
