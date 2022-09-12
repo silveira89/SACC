@@ -16,5 +16,11 @@ namespace SACC.Controllers {
             var users = _userRepository.Users;
             return View(users);
         }
+
+        // Get User
+        public IActionResult GetUser([FromRoute] string id) {
+            var user = _userRepository.GetUserId(id);
+            return View(user);
+        }
     }
 }
