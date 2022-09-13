@@ -36,6 +36,7 @@ builder.Services.AddAuthorization(options => {
 builder.Services.AddTransient<IBookRepository, BookRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IPostRepository, PostRepository>();
+builder.Services.AddTransient<INetworkRepository, NetworkRepository>();
 
 var app = builder.Build();
 

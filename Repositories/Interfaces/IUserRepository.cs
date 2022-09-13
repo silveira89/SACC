@@ -5,5 +5,6 @@ namespace SACC.Repositories.Interfaces {
         IEnumerable<User> Users { get; }
 
         User GetUserId(string userId);
+
     }
 }

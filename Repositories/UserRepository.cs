@@ -16,5 +16,6 @@ namespace SACC.Repositories {
         public User GetUserId(string userId) {
             return _content.Users.FirstOrDefault(b => b.Id == userId);
         }
+
     }
 }
