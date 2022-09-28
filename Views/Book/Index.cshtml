@@ -9,54 +9,54 @@
 @{
     if ((await AuthorizationService.AuthorizeAsync(User, "adm")).Succeeded) {
         <p>
-    <a asp-action="Create">Cadastrar livro</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BookFile)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BookFile)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
-                    
-                    <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <a asp-action="Create">Cadastrar livro</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookFile)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookFile)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.BookId">Editar</a> |
+
+                            <a asp-action="Delete" asp-route-id="@item.BookId">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     } else {
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach (var book in Model) {
-                <a asp-controller="Book" asp-action="@book.Title" style="text-decoration:none">
+                <a asp-controller="Book" asp-action="ViewBook" asp-route-id="@book.BookId" style="text-decoration:none">
                     <div class="col" style="text-align:center; color:black">
                         <div class="card">
                             <img src="/images/@book.Image" class="card-img-top" alt="...">

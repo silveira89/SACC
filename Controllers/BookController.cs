@@ -25,11 +25,10 @@ namespace SACC.Controllers {
         }
 
         // GET: Book/Title
-        [HttpGet("book/{title}")]
-        public IActionResult ViewBook([FromRoute] string title) {
-            var book = _bookRepository.GetLivro(title);
-            var filePath = "\\pdf\\" + book.BookFile;
-            return File(filePath, "application/pdf");
+        [HttpGet("book/viewBook/{id}")]
+        public IActionResult ViewBook([FromRoute] int id) {
+            var book = _bookRepository.GetBookId(id);
+            return View(book);
         }
 
         // GET: Book/Create

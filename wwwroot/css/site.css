@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 html {
   font-size: 14px;
 }
@@ -16,3 +22,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+
